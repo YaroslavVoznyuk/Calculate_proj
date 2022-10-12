@@ -18,12 +18,12 @@ namespace CalcWinForm
 
             C = new Calc();
 
-            //label1.Text = "0";
+            //labelNumber.Text = "0";
         }
 
         private void buttonClear_Click(object sender, EventArgs e)
         {
-            label1.Text = "0";
+            labelNumber.Text = "0";
 
             C.Clear_A();
             FreeButtons();
@@ -33,86 +33,86 @@ namespace CalcWinForm
 
         private void buttonChangeSign_Click(object sender, EventArgs e)
         {
-            if (label1.Text[0] == '-')
-                label1.Text = label1.Text.Remove(0, 1);
+            if (labelNumber.Text[0] == '-')
+                labelNumber.Text = labelNumber.Text.Remove(0, 1);
             else
-                label1.Text = "-" + label1.Text;
+                labelNumber.Text = "-" + labelNumber.Text;
         }
 
         private void buttonPoint_Click(object sender, EventArgs e)
         {
-            if ((label1.Text.IndexOf(",") == -1) && (label1.Text.IndexOf("∞") == -1))
-                label1.Text += ",";
+            if ((labelNumber.Text.IndexOf(",") == -1) && (labelNumber.Text.IndexOf("∞") == -1))
+                labelNumber.Text += ",";
         }
 
         #region nums 0-9
 
         private void button0_Click(object sender, EventArgs e)
         {
-            label1.Text += "0";
+            labelNumber.Text += "0";
 
             CorrectNumber();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            label1.Text += "1";
+            labelNumber.Text += "1";
 
             CorrectNumber();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            label1.Text += "2";
+            labelNumber.Text += "2";
 
             CorrectNumber();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            label1.Text += "3";
+            labelNumber.Text += "3";
 
             CorrectNumber();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            label1.Text += "4";
+            labelNumber.Text += "4";
 
             CorrectNumber();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            label1.Text += "5";
+            labelNumber.Text += "5";
 
             CorrectNumber();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            label1.Text += "6";
+            labelNumber.Text += "6";
 
             CorrectNumber();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            label1.Text += "7";
+            labelNumber.Text += "7";
 
             CorrectNumber();
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            label1.Text += "8";
+            labelNumber.Text += "8";
 
             CorrectNumber();
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            label1.Text += "9";
+            labelNumber.Text += "9";
 
             CorrectNumber();
         }
@@ -121,23 +121,23 @@ namespace CalcWinForm
 
         private void buttonCalc_Click(object sender, EventArgs e)
         {
-            if (!Multiply.Enabled)
-                label1.Text = C.Multiplication(Convert.ToDouble(label1.Text)).ToString();
+            if (!buttonMult.Enabled)
+                labelNumber.Text = C.Multiplication(Convert.ToDouble(labelNumber.Text)).ToString();
 
-            if (!Divide.Enabled)
-                label1.Text = C.Division(Convert.ToDouble(label1.Text)).ToString();
+            if (!buttonDiv.Enabled)
+                labelNumber.Text = C.Division(Convert.ToDouble(labelNumber.Text)).ToString();
 
-            if (!buttonMPlus.Enabled)
-                label1.Text = C.Sum(Convert.ToDouble(label1.Text)).ToString();
+            if (!buttonPlus.Enabled)
+                labelNumber.Text = C.Sum(Convert.ToDouble(labelNumber.Text)).ToString();
 
-            if (!buttonMMinus.Enabled)
-                label1.Text = C.Subtraction(Convert.ToDouble(label1.Text)).ToString();
+            if (!buttonMinus.Enabled)
+                labelNumber.Text = C.Subtraction(Convert.ToDouble(labelNumber.Text)).ToString();
 
             if (!buttonSqrtX.Enabled)
-                label1.Text = C.SqrtX(Convert.ToDouble(label1.Text)).ToString();
+                labelNumber.Text = C.SqrtX(Convert.ToDouble(labelNumber.Text)).ToString();
 
             if (!buttonDegreeY.Enabled)
-                label1.Text = C.DegreeY(Convert.ToDouble(label1.Text)).ToString();
+                labelNumber.Text = C.DegreeY(Convert.ToDouble(labelNumber.Text)).ToString();
 
             C.Clear_A();
             FreeButtons();
@@ -152,11 +152,11 @@ namespace CalcWinForm
         {
             if (CanPress())
             {
-                C.Put_A(Convert.ToDouble(label1.Text));;
+                C.Put_A(Convert.ToDouble(labelNumber.Text));
 
-                Multiply.Enabled = false;
+                buttonMult.Enabled = false;
 
-                label1.Text = "0";
+                labelNumber.Text = "0";
             }
         }
 
@@ -165,11 +165,11 @@ namespace CalcWinForm
         {
             if (CanPress())
             {
-                C.Put_A(Convert.ToDouble(label1.Text));
+                C.Put_A(Convert.ToDouble(labelNumber.Text));
 
-                Divide.Enabled = false;
+                buttonDiv.Enabled = false;
 
-                label1.Text = "0";
+                labelNumber.Text = "0";
             }
         }
 
@@ -178,11 +178,11 @@ namespace CalcWinForm
         {
             if (CanPress())
             {
-                C.Put_A(Convert.ToDouble(label1.Text));
+                C.Put_A(Convert.ToDouble(labelNumber.Text));
 
-                buttonMPlus.Enabled = false;
+                buttonPlus.Enabled = false;
 
-                label1.Text = "0";
+                labelNumber.Text = "0";
             }
         }
 
@@ -191,11 +191,11 @@ namespace CalcWinForm
         {
             if (CanPress())
             {
-                C.Put_A(Convert.ToDouble(label1.Text));
+                C.Put_A(Convert.ToDouble(labelNumber.Text));
 
-                buttonMMinus.Enabled = false;
+                buttonMinus.Enabled = false;
 
-                label1.Text = "0";
+                labelNumber.Text = "0";
             }
         }
 
@@ -204,11 +204,11 @@ namespace CalcWinForm
         {
             if (CanPress())
             {
-                C.Put_A(Convert.ToDouble(label1.Text));
+                C.Put_A(Convert.ToDouble(labelNumber.Text));
 
                 buttonSqrtX.Enabled = false;
 
-                label1.Text = "0";
+                labelNumber.Text = "0";
             }
         }
 
@@ -217,11 +217,11 @@ namespace CalcWinForm
         {
             if (CanPress())
             {
-                C.Put_A(Convert.ToDouble(label1.Text));
+                C.Put_A(Convert.ToDouble(labelNumber.Text));
 
                 buttonDegreeY.Enabled = false;
 
-                label1.Text = "0";
+                labelNumber.Text = "0";
             }
         }
 
@@ -230,9 +230,9 @@ namespace CalcWinForm
         {
             if (CanPress())
             {
-                C.Put_A(Convert.ToDouble(label1.Text));
+                C.Put_A(Convert.ToDouble(labelNumber.Text));
 
-                label1.Text = C.Sqrt().ToString();
+                labelNumber.Text = C.Sqrt().ToString();
 
                 C.Clear_A();
                 FreeButtons();
@@ -244,9 +244,9 @@ namespace CalcWinForm
         {
             if (CanPress())
             {
-                C.Put_A(Convert.ToDouble(label1.Text));
+                C.Put_A(Convert.ToDouble(labelNumber.Text));
 
-                label1.Text = C.Square().ToString();
+                labelNumber.Text = C.Square().ToString();
 
                 C.Clear_A();
                 FreeButtons();
@@ -258,12 +258,12 @@ namespace CalcWinForm
         {
             if (CanPress())
             {
-                if ((Convert.ToDouble(label1.Text) == (int)(Convert.ToDouble(label1.Text))) &&
-                    ((Convert.ToDouble(label1.Text) >= 0.0)))
+                if ((Convert.ToDouble(labelNumber.Text) == (int)(Convert.ToDouble(labelNumber.Text))) &&
+                    ((Convert.ToDouble(labelNumber.Text) >= 0.0)))
                 {
-                    C.Put_A(Convert.ToDouble(label1.Text));
+                    C.Put_A(Convert.ToDouble(labelNumber.Text));
 
-                    label1.Text = C.Factorial().ToString();
+                    labelNumber.Text = C.Factorial().ToString();
 
                     C.Clear_A();
                     FreeButtons();
@@ -274,6 +274,49 @@ namespace CalcWinForm
         }
 
         #endregion
+
+        //кнопка М+
+        private void buttonMPlus_Click(object sender, EventArgs e)
+        {
+            C.M_Sum(Convert.ToDouble(labelNumber.Text));
+        }
+
+        //кнопка М-
+        private void buttonMMinus_Click(object sender, EventArgs e)
+        {
+            C.M_Subtraction(Convert.ToDouble(labelNumber.Text));
+        }
+
+        //кнопка М*
+        private void buttonMMult_Click(object sender, EventArgs e)
+        {
+            C.M_Multiplication(Convert.ToDouble(labelNumber.Text));
+        }
+
+        //кнопка М/
+        private void buttonMDiv_Click(object sender, EventArgs e)
+        {
+            C.M_Division(Convert.ToDouble(labelNumber.Text));
+        }
+
+        private void buttonMRC_Click(object sender, EventArgs e)
+        {
+            if (CanPress())
+            {
+                k++;
+
+                if (k == 1)
+                    labelNumber.Text = C.MemoryShow().ToString();
+
+                if (k == 2)
+                {
+                    C.Memory_Clear();
+                    labelNumber.Text = "0";
+
+                    k = 0;
+                }
+            }
+        }
 
     }
 }

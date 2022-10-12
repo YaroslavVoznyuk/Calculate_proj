@@ -38,40 +38,40 @@
 
         }
 
-        private System.Windows.Forms.Button buttonEqual;
+        private System.Windows.Forms.Button buttonCalc;
 
-        private System.Windows.Forms.Button buttonFour;
-        private System.Windows.Forms.Button buttonFive;
-        private System.Windows.Forms.Button buttonSix;
-        private System.Windows.Forms.Button buttonSeven;
-        private System.Windows.Forms.Button buttonEight;
-        private System.Windows.Forms.Button buttonNine;
+        private System.Windows.Forms.Button button0;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button9;
 
-        private System.Windows.Forms.Button buttonCE;
+        private System.Windows.Forms.Button buttonClear;
 
         private System.Windows.Forms.Button buttonPoint;
 
-        private System.Windows.Forms.Button buttonTwo;
-        private System.Windows.Forms.Button buttonThree;
 
-        private System.Windows.Forms.Button button1;
 
-        private System.Windows.Forms.Button buttonZero;
 
-        private System.Windows.Forms.Button Sum;
-        private System.Windows.Forms.Button Substract;
+        private System.Windows.Forms.Button buttonPlus;
+        private System.Windows.Forms.Button buttonMinus;
 
-        private System.Windows.Forms.Button Multiply;
-        private System.Windows.Forms.Button Divide;
+        private System.Windows.Forms.Button buttonMult;
+        private System.Windows.Forms.Button buttonDiv;
 
         private System.Windows.Forms.Button buttonMRC;
 
         private System.Windows.Forms.Button buttonMMinus;
         private System.Windows.Forms.Button buttonMPlus;
 
-        private System.Windows.Forms.Button buttonMMultiply;
+        private System.Windows.Forms.Button buttonMMult;
 
-        private System.Windows.Forms.Button button_MDivide;
+        private System.Windows.Forms.Button buttonMDiv;
 
         private System.Windows.Forms.Button buttonFactorial;
 
@@ -83,10 +83,10 @@
 
         private System.Windows.Forms.Button buttonSqrt;
 
-        private System.Windows.Forms.Button buttonPlusMinus;
+        private System.Windows.Forms.Button buttonChangeSign;
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelNumber;
 
         #endregion
 
@@ -97,31 +97,31 @@
         private void CorrectNumber()
         {
             //если есть знак "бесконечность" - не даёт писать цифры после него
-            if (label1.Text.IndexOf("∞") != -1)
-                label1.Text = label1.Text.Substring(0, label1.Text.Length - 1);
+            if (labelNumber.Text.IndexOf("∞") != -1)
+                labelNumber.Text = labelNumber.Text.Substring(0, labelNumber.Text.Length - 1);
 
             //ситуация: слева ноль, а после него НЕ запятая, тогда ноль можно удалить
-            if (label1.Text[0] == '0' && (label1.Text.IndexOf(",") != 1))
-                label1.Text = label1.Text.Remove(0, 1);
+            if (labelNumber.Text[0] == '0' && (labelNumber.Text.IndexOf(",") != 1))
+                labelNumber.Text = labelNumber.Text.Remove(0, 1);
 
             //аналогично предыдущему, только для отрицательного числа
-            if (label1.Text[0] == '-')
-                if (label1.Text[1] == '0' && (label1.Text.IndexOf(",") != 2))
-                    label1.Text = label1.Text.Remove(1, 1);
+            if (labelNumber.Text[0] == '-')
+                if (labelNumber.Text[1] == '0' && (labelNumber.Text.IndexOf(",") != 2))
+                    labelNumber.Text = labelNumber.Text.Remove(1, 1);
         }
 
         private bool CanPress()
         {
-            if (!Multiply.Enabled)
+            if (!buttonMult.Enabled)
                 return false;
 
-            if (!Divide.Enabled)
+            if (!buttonDiv.Enabled)
                 return false;
 
-            if (!buttonMPlus.Enabled)
+            if (!buttonPlus.Enabled)
                 return false;
 
-            if (!buttonMMinus.Enabled)
+            if (!buttonMinus.Enabled)
                 return false;
 
             if (!buttonSqrtX.Enabled)
@@ -135,10 +135,10 @@
 
         private void FreeButtons()
         {
-            Multiply.Enabled = true;
-            Divide.Enabled = true;
-            buttonMPlus.Enabled = true;
-            buttonMMinus.Enabled = true;
+            buttonMult.Enabled = true;
+            buttonDiv.Enabled = true;
+            buttonPlus.Enabled = true;
+            buttonMinus.Enabled = true;
             buttonSqrtX.Enabled = true;
             buttonDegreeY.Enabled = true;
         }
