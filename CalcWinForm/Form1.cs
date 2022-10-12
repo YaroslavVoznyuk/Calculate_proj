@@ -15,9 +15,7 @@ namespace CalcWinForm
         public Form1()
         {
             InitializeComponent();
-
             C = new Calc();
-
             //labelNumber.Text = "0";
         }
 

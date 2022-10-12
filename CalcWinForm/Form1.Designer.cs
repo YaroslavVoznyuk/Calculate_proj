@@ -35,58 +35,127 @@
             this.ClientSize = new System.Drawing.Size(554, 396);
             this.Name = "Form1";
             this.ResumeLayout(false);
-
         }
 
+        /// <summary>
+        /// "="
+        /// </summary>
         private System.Windows.Forms.Button buttonCalc;
-
+        /// <summary>
+        /// "0"
+        /// </summary>
         private System.Windows.Forms.Button button0;
+        /// <summary>
+        /// "1"
+        /// </summary>
         private System.Windows.Forms.Button button1;
+        /// <summary>
+        /// "2"
+        /// </summary>
         private System.Windows.Forms.Button button2;
+        /// <summary>
+        /// "3"
+        /// </summary>
         private System.Windows.Forms.Button button3;
+        /// <summary>
+        /// "4"
+        /// </summary>
         private System.Windows.Forms.Button button4;
+        /// <summary>
+        /// "5"
+        /// </summary>
         private System.Windows.Forms.Button button5;
+        /// <summary>
+        /// "6"
+        /// </summary>
         private System.Windows.Forms.Button button6;
+        /// <summary>
+        /// "7"
+        /// </summary>
         private System.Windows.Forms.Button button7;
+        /// <summary>
+        /// "8"
+        /// </summary>
         private System.Windows.Forms.Button button8;
+        /// <summary>
+        /// "9"
+        /// </summary>        
         private System.Windows.Forms.Button button9;
-
+        /// <summary>
+        /// "CE"
+        /// </summary>
         private System.Windows.Forms.Button buttonClear;
+        /// <summary>
+        /// ","
+        /// </summary>
+        private System.Windows.Forms.Button buttonPoint; 
 
-        private System.Windows.Forms.Button buttonPoint;
-
-
-
-
+        /// <summary>
+        /// "+"
+        /// </summary>
         private System.Windows.Forms.Button buttonPlus;
+        /// <summary>
+        /// "-"
+        /// </summary>
         private System.Windows.Forms.Button buttonMinus;
-
+        /// <summary>
+        /// "*"
+        /// </summary>
         private System.Windows.Forms.Button buttonMult;
+        /// <summary>
+        /// "/"
+        /// </summary>
         private System.Windows.Forms.Button buttonDiv;
-
+        /// <summary>
+        /// "MRC"
+        /// </summary>
         private System.Windows.Forms.Button buttonMRC;
-
+        /// <summary>
+        /// "M-"
+        /// </summary>
         private System.Windows.Forms.Button buttonMMinus;
+        /// <summary>
+        /// "M+"
+        /// </summary>
         private System.Windows.Forms.Button buttonMPlus;
-
+        /// <summary>
+        /// "M*"
+        /// </summary>
         private System.Windows.Forms.Button buttonMMult;
-
+        /// <summary>
+        /// "M/"
+        /// </summary>
         private System.Windows.Forms.Button buttonMDiv;
-
+        /// <summary>
+        /// "n!"
+        /// </summary>
         private System.Windows.Forms.Button buttonFactorial;
-
+        /// <summary>
+        /// "^Y" - введение в произвольную ст
+        /// </summary>
         private System.Windows.Forms.Button buttonDegreeY;
-
+        /// <summary>
+        /// корень произвольной степени
+        /// </summary>
         private System.Windows.Forms.Button buttonSqrtX;
-
+        /// <summary>
+        /// квадрат числа
+        /// </summary>
         private System.Windows.Forms.Button buttonSquare;
-
+        /// <summary>
+        /// корень кв
+        /// </summary>
         private System.Windows.Forms.Button buttonSqrt;
-
-        private System.Windows.Forms.Button buttonChangeSign;
+        /// <summary>
+        /// Кнопка изменения знака у числа "+/-"
+        /// </summary>
+        private System.Windows.Forms.Button buttonChangeSign; 
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label labelNumber;
+        /// <summary>
+        /// label для вывода
+        /// </summary>
+        private System.Windows.Forms.Label labelNumber; 
 
         #endregion
 
@@ -142,9 +211,6 @@
             buttonSqrtX.Enabled = true;
             buttonDegreeY.Enabled = true;
         }
-
-
-
 
     }
 }
